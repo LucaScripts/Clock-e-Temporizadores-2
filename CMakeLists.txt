@@ -1,4 +1,4 @@
-# Generated Cmake Pico project file
+# Arquivo CMake gerado para o projeto Pico
 
 cmake_minimum_required(VERSION 3.13)
 
@@ -6,10 +6,10 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-# Initialise pico_sdk from installed location
-# (note this can come from environment, CMake cache etc)
+# Inicializa o pico_sdk a partir da localização instalada
+# (nota: isso pode vir do ambiente, cache do CMake, etc.)
 
-# == DO NOT EDIT THE FOLLOWING LINES for the Raspberry Pi Pico VS Code Extension to work ==
+# == NÃO EDITE AS LINHAS ABAIXO para que a extensão do VS Code funcione corretamente com o Raspberry Pi Pico ==
 if(WIN32)
     set(USERHOME $ENV{USERPROFILE})
 else()
@@ -23,41 +23,41 @@ if (EXISTS ${picoVscode})
     include(${picoVscode})
 endif()
 # ====================================================================================
-set(PICO_BOARD pico_w CACHE STRING "Board type")
+set(PICO_BOARD pico_w CACHE STRING "Tipo de Placa")
 
-# Pull in Raspberry Pi Pico SDK (must be before project)
+# Inclui o SDK do Raspberry Pi Pico (deve ser antes de 'project')
 include(pico_sdk_import.cmake)
 
+# Define o projeto com os tipos de linguagens
 project(temporizador_OneShot C CXX ASM)
 
-# Initialise the Raspberry Pi Pico SDK
+# Inicializa o SDK do Raspberry Pi Pico
 pico_sdk_init()
 
-# Add executable. Default name is the project name, version 0.1
+# Adiciona o executável. O nome padrão é o nome do projeto, versão 0.1
+add_executable(temporizador_OneShot temporizador_OneShot.c)
 
-add_executable(temporizador_OneShot temporizador_OneShot.c )
-
+# Define o nome e a versão do programa
 pico_set_program_name(temporizador_OneShot "temporizador_OneShot")
 pico_set_program_version(temporizador_OneShot "0.1")
 
-# Modify the below lines to enable/disable output over UART/USB
+# Modifique as linhas abaixo para habilitar/desabilitar a saída via UART/USB
 pico_enable_stdio_uart(temporizador_OneShot 1)
 pico_enable_stdio_usb(temporizador_OneShot 1)
 
-# Add the standard library to the build
+# Adiciona a biblioteca padrão ao build
 target_link_libraries(temporizador_OneShot
         pico_stdlib)
 
-# Add the standard include files to the build
+# Adiciona os arquivos de cabeçalho padrão ao build
 target_include_directories(temporizador_OneShot PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}
 )
 
-# Add any user requested libraries
+# Adiciona bibliotecas adicionais requisitadas pelo usuário
 target_link_libraries(temporizador_OneShot 
         hardware_timer
-        
-        )
+)
 
+# Adiciona saídas extras para o projeto
 pico_add_extra_outputs(temporizador_OneShot)
-
