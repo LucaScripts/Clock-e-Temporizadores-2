@@ -1,0 +1,64 @@
+{
+  "version": 1,
+  "author": "VALTER Machado de Souza Filho",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-pi-pico-w", "id": "pico", "top": 6.35, "left": 118.75, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": 25.2, "left": -92.2, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "led2", "top": 25.2, "left": -121, "attrs": { "color": "blue" } },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": 25.2,
+      "left": -53.8,
+      "attrs": { "color": "green" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 44.6,
+      "left": 9.6,
+      "attrs": { "color": "grey" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 110.4,
+      "left": -67.75,
+      "rotate": 90,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 110.4,
+      "left": -96.55,
+      "rotate": 90,
+      "attrs": { "value": "330" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 110.4,
+      "left": -125.35,
+      "rotate": 90,
+      "attrs": { "value": "330" }
+    }
+  ],
+  "connections": [
+    [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+    [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+    [ "pico:GP11", "r1:2", "green", [ "h-105.6", "v-9.6" ] ],
+    [ "pico:GP12", "r3:2", "green", [ "h0" ] ],
+    [ "pico:GP13", "r2:2", "green", [ "h0" ] ],
+    [ "btn1:2.r", "pico:GP5", "green", [ "h9.8", "v19.4" ] ],
+    [ "pico:GND.1", "btn1:1.r", "black", [ "h0" ] ],
+    [ "r1:1", "led3:A", "green", [ "h0" ] ],
+    [ "r2:1", "led1:A", "green", [ "h0" ] ],
+    [ "r3:1", "led2:A", "green", [ "h0" ] ],
+    [ "pico:GND.1", "led3:C", "black", [ "h-9.6", "v-19.2", "h-230.4", "v48", "h124.8" ] ],
+    [ "pico:GND.1", "led1:C", "black", [ "h-9.6", "v-19.2", "h-230.4", "v48", "h76.8" ] ],
+    [ "pico:GND.1", "led2:C", "black", [ "h-9.6", "v-19.2", "h-230.4", "v48", "h28.8" ] ]
+  ],
+  "dependencies": {}
+}
