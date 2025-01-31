@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/24d0183a-f6e3-40de-991c-a06dcdf42a55)# 🚦 Controle de LEDs com Raspberry Pi Pico
+🚦 Controle de LEDs com Raspberry Pi Pico
 📌 Autor: Lucas Dias
 
 📆 Data: 31/01/2025
