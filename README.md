@@ -58,12 +58,6 @@ Para baixar o código e começar a trabalhar com ele clonar o repositório e car
 Após a compilação, copie o arquivo `.uf2` gerado para o Raspberry Pi Pico (modo bootloader ativado).
 
 
-## 🧪 Testando na Placa BitDogLab
-
-Aqui está o teste do semáforo rodando na **Placa BitDogLab**:
-
-![Testando na BitDogLab](https://github.com/LucaScripts/Clock-e-Temporizadores-2/blob/main/docs/WhatsApp%20Video%202025-01-31%20at%2019.28.55.gif?raw=true)
-
 ---
 
 ## 🎯 **Funcionamento**
